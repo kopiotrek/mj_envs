@@ -32,3 +32,11 @@ register(
     max_episode_steps=200,
 )
 from mj_envs.hand_manipulation_suite.relocate_v0 import RelocateEnvV0
+
+# A hand only test env
+register(
+    id='hand-v0',
+    entry_point='mj_envs.hand_manipulation_suite:HandEnvV0',
+    max_episode_steps=200,
+)
+from mj_envs.hand_manipulation_suite.hand_v0 import HandEnvV0

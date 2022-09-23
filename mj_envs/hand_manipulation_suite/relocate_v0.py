@@ -1,7 +1,7 @@
 import numpy as np
 from gym import utils
 from mjrl.envs import mujoco_env
-from mujoco_py import MjViewer
+from mujoco_py import MjViewer, MjRenderContextOffscreen
 import os
 
 ADD_BONUS_REWARDS = True
@@ -107,7 +107,7 @@ class RelocateEnvV0(mujoco_env.MujocoEnv, utils.EzPickle):
 
     def mj_viewer_setup(self):
         self.viewer = MjViewer(self.sim)
-        self.viewer.cam.azimuth = 90
+        self.viewer.cam.azimuth = 0
         self.sim.forward()
         self.viewer.cam.distance = 1.5
 

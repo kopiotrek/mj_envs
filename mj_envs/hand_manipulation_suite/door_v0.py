@@ -77,6 +77,7 @@ class DoorEnvV0(mujoco_env.MujocoEnv, utils.EzPickle):
         else:
             door_open = -1.0
         latch_pos = qp[-1]
+        # for qpos, 0 is z-rotation, -2: are two door joints
         return np.concatenate([qp[1:-2], [latch_pos], door_pos, palm_pos, handle_pos, palm_pos-handle_pos, [door_open]])
 
     def reset_model(self):
